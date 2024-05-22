@@ -287,43 +287,54 @@ Future<void> _selectImage() async {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('Images/bg13.png'), fit: BoxFit.fill),
-          ),
-          padding: width > webScreenSize
-              ? EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width / 5)
-              : const EdgeInsets.symmetric(horizontal: 24),
-          width: double.infinity,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              if (width < webScreenSize)
-                Image.asset('Images/app_logo-removebg.png',
-                    width: 140, height: 140),
-              ShaderMask(
-                shaderCallback: (bounds) => LinearGradient(
-                  colors: [blue, green],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ).createShader(bounds),
-                child: Text(
-                  'Scan & Detect Deepfakes',
-                  style: TextStyle(
-                    fontSize: 34.0,
-                    fontFamily: 'Inter',
-                    // The color must be set to white for the gradient to show
-                    color: Colors.white,
+        child: SingleChildScrollView(
+          child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('Images/bg13.png'), fit: BoxFit.fill),
+            ),
+            padding: width > webScreenSize
+                ? EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width / 5)
+                : const EdgeInsets.symmetric(horizontal: 24),
+            width: double.infinity,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                if (width < webScreenSize)
+                  Image.asset('Images/app_logo-removebg.png',
+                      width: 140, height: 140),
+                      SizedBox(height: 40),
+                ShaderMask(
+                  shaderCallback: (bounds) => LinearGradient(
+                    colors: [blue, green],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ).createShader(bounds),
+                  child: Text(
+                    'Scan & Detect Deepfakes',
+                    style: TextStyle(
+                      fontSize: 34.0,
+                      fontFamily: 'Inter',
+                      // The color must be set to white for the gradient to show
+                      color: Colors.white,
+                    ),
                   ),
                 ),
-              ),
-              Flexible(child: Container(), flex: 1),
-              width < webScreenSize
-                  ? Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
+                SizedBox(height: 40),
+                width < webScreenSize
+                    ? Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Upload a Video or Image",
+                          style: TextStyle(
+                            fontFamily: 'Inter',
+                            fontSize: 14,
+                            color: whiteColor,
+                          ),
+                        ),
+                      )
+                    : Text(
                         "Upload a Video or Image",
                         style: TextStyle(
                           fontFamily: 'Inter',
@@ -331,76 +342,68 @@ Future<void> _selectImage() async {
                           color: whiteColor,
                         ),
                       ),
-                    )
-                  : Text(
-                      "Upload a Video or Image",
-                      style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontSize: 14,
-                        color: whiteColor,
+                const SizedBox(height: 6),
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: _buildSelectedFileWidget(),
                       ),
-                    ),
-              const SizedBox(height: 6),
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Expanded(
-                      child: _buildSelectedFileWidget(),
-                    ),
-                    SizedBox(width: 10),
-                    TextButton(
-                      onPressed: _selectFile,
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            const Color.fromARGB(255, 109, 175, 175)),
-                        overlayColor:
-                            MaterialStateProperty.all<Color>(Colors.black),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(7.0),
-                            side: BorderSide(color: Colors.black),
+                      SizedBox(width: 10),
+                      TextButton(
+                        onPressed: _selectFile,
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              const Color.fromARGB(255, 109, 175, 175)),
+                          overlayColor:
+                              MaterialStateProperty.all<Color>(Colors.black),
+                          shape: MaterialStateProperty.all<OutlinedBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(7.0),
+                              side: BorderSide(color: Colors.black),
+                            ),
                           ),
                         ),
-                      ),
-                      child: Text(
-                        'Choose File',
-                        style:
-                            TextStyle(color: Colors.black, fontFamily: 'Inter'),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 30),
-              InkWell(
-                onTap: scan,
-                child: Container(
-                  width: double.infinity,
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(35),
-                    gradient: LinearGradient(
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                        colors: [
-                          Color.fromRGBO(53, 102, 172, 1), // light blue
-                          Color.fromARGB(255, 106, 175, 169) // dark blue
-                        ]),
-                  ),
-                  child: !_isLoading
-                      ? Text(
-                          'Scan',
-                          style: smallWhiteTextStyle,
-                        )
-                      : const CircularProgressIndicator(
-                          color: whiteColor,
+                        child: Text(
+                          'Choose File',
+                          style:
+                              TextStyle(color: Colors.black, fontFamily: 'Inter'),
                         ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Flexible(child: Container(), flex: 3)
-            ],
+                SizedBox(height: 30),
+                InkWell(
+                  onTap: scan,
+                  child: Container(
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(35),
+                      gradient: LinearGradient(
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                          colors: [
+                            Color.fromRGBO(53, 102, 172, 1), // light blue
+                            Color.fromARGB(255, 106, 175, 169) // dark blue
+                          ]),
+                    ),
+                    child: !_isLoading
+                        ? Text(
+                            'Scan',
+                            style: smallWhiteTextStyle,
+                          )
+                        : const CircularProgressIndicator(
+                            color: whiteColor,
+                          ),
+                  ),
+                ),
+                SizedBox(height: 250),
+              ],
+            ),
           ),
         ),
       ),
