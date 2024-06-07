@@ -4,8 +4,12 @@
 
 This projects aims in detection of video deepfakes using deep learning techniques like ResNeXt50 and LSTM. We have achived deepfake detection by using transfer learning where the pretrained ResNext CNN is used to obtain a feature vector, further the LSTM layer is trained using the features.
 
-You can clone this flutter application.
+You can clone this flutter application using below command:
+
+git clone 
+
 #Key Features:
+
 The features in our app is:
 
 💡 𝑨𝒄𝒄𝒖𝒓𝒂𝒄𝒚: We achieved an accuracy of 93% on training set and 75% on test set.
