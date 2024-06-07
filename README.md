@@ -29,8 +29,10 @@ api.py file contains the API in which http request from flutter app is passed to
 For preprocessing of videos and model Training we used the code from <a href='https://github.com/abhijitjadhav1998/Deepfake_detection_using_deep_learning'>this Github repo</a>
 
 #Demo
+
 You can watch the video for demo:
-https://www.linkedin.com/in/ayesha76/recent-activity/all/
+
+<a href='https://www.linkedin.com/posts/ayesha76_deepfakedetection-ai-machinelearning-activity-7199006954034233344-9TdQ?utm_source=share&utm_medium=member_desktop'>Click here</a>
 
 # Contributors
 
