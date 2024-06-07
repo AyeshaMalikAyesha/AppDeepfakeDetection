@@ -8,6 +8,11 @@ You can clone this flutter application.
 
 api.py file contains the API.
 
+#Model Training
+
+For preprocessing of videos and model Training we used the code from <a href='https://github.com/abhijitjadhav1998/Deepfake_detection_using_deep_learning'>this Github repo</a>:
+
+
 # Contributors
 
 1. Ayesha
