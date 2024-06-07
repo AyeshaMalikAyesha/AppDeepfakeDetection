@@ -6,9 +6,9 @@ This projects aims in detection of video deepfakes using deep learning technique
 
 You can clone this flutter application using below command:
 
-git clone 
+git clone https://github.com/AyeshaMalikAyesha/AppDeepfakeDetection.git
 
-#Key Features:
+# Key Features:
 
 The features in our app is:
 
@@ -28,11 +28,11 @@ The features in our app is:
 
 api.py file contains the API in which http request from flutter app is passed to server through api where preprocessing and prediction occur.
 
-#Model Training
+# Model Training
 
 For preprocessing of videos and model Training we used the code from <a href='https://github.com/abhijitjadhav1998/Deepfake_detection_using_deep_learning'>this Github repo</a>
 
-#Demo
+# Demo
 
 You can watch the video for demo:
 
