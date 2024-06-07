@@ -20,7 +20,22 @@ void main() async {
     statusBarIconBrightness: Brightness.light, // Status bar icons' color
   ));
 
-
+  final prefs = await SharedPreferences.getInstance();
+  show = prefs.getBool('ON_BOARDING') ?? true;
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+      options: const FirebaseOptions(
+          apiKey: "AIzaSyCmSD297LlcL1T0vuRfaduvBV_wGmH6LFs",
+          appId: "1:475951469370:web:5eade92bde0d8fbd513603",
+          messagingSenderId: "475951469370",
+          projectId: "fakevision-ec7f4",
+          storageBucket: "fakevision-ec7f4.appspot.com"),
+    );
+  } else {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  }
 
 //  SystemChrome.setPreferredOrientations([
 //     DeviceOrientation.portraitUp,
