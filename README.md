@@ -1,16 +1,17 @@
-# fake_vision
+# Deepfake Detection Using Deep Learning(ResNeXt50 and LSTM)
 
-A new Flutter project.
+**Give a Star⭐ to Repo**
 
-## Getting Started
+This projects aims in detection of video deepfakes using deep learning techniques like ResNeXt50 and LSTM. We have achived deepfake detection by using transfer learning where the pretrained ResNext CNN is used to obtain a feature vector, further the LSTM layer is trained using the features.
 
-This project is a starting point for a Flutter application.
+You can clone this flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+api.py file contains the API.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+**Contributors**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Ayesha
+Sania Batool
+Sana Anwar
+
+
