@@ -66,6 +66,27 @@ var request = http.MultipartRequest(
 
 This change will configure the app to use the appropriate API endpoint for the emulator.
 
+
+# Run on real device
+
+To run the application on a real device, please follow these instructions:
+
+1. Visit [Ngrok Setup for Windows](https://dashboard.ngrok.com/get-started/setup/windows) and sign in.
+
+2. In the "Step 1: Connect" section, go to the download section and download Ngrok for Windows (64-bit or 32-bit) according to your system specifications.
+
+3. After downloading, install Ngrok and add its installation path to the PATH variable under system variables.
+
+4. Once Ngrok is installed, return to the Ngrok dashboard and go to the "Deploy Your App Online" section. Find the "Static Domain" section and copy the domain. For example, the domain might be: `ngrok http --domain=macaw-elegant-ghastly.ngrok-free.app 80`. In your case it is different.
+
+5. Replace `80` with `5000` in the copied domain, resulting in: `ngrok http --domain=macaw-elegant-ghastly.ngrok-free.app 5000`.
+
+6. Open Visual Studio Code, ensure the API is running, and paste the modified command (`ngrok http --domain=macaw-elegant-ghastly.ngrok-free.app 5000`) into the terminal.
+
+7. Now go to scan_screen.dart file, navigate to line 76 and replace this part https://sparrow-helpful-yearly.ngrok-free.app of the line with this **https://macaw-elegant-ghastly.ngrok-free.app**. In your case your static domain will be different.
+
+This setup will allow you to run the application on a real device.
+
 # Demo
 
 You can watch the video for demo:
