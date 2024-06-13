@@ -25,8 +25,18 @@ The features in our app is:
 
 💡 𝑪𝒐𝒎𝒎𝒖𝒏𝒊𝒕𝒚 𝑭𝒐𝒓𝒖𝒎: Our forum is a dynamic, interactive space designed for users, experts, and enthusiasts of our deepfake detection app.
 
+# API
 
-api.py file contains the API in which http request from flutter app is passed to server through api where preprocessing and prediction occur.
+api.py file contains the API in which http request from flutter app is passed to server through api where preprocessing and prediction occur.To properly set up the model for the API, follow these steps:
+
+1. **Train the Model**: Begin by training your model.
+2. **Save and Download the Model**: Once the model is trained, save it and download the model file.
+3. **Update Local Repository**: Save the downloaded model file in your local repository.
+4. **Modify Path in `api.py`**: Update the `path_to_model` variable in the `api.py` file to reflect the new location of the model file.
+5. **Create Static Folder**: Ensure that a `static` folder is created in your project directory. This folder will store user input files.
+6. **Update Filepath in `api.py`**: Update the `filepath` variable in the `api.py` file to point to the newly created `static` folder here on line 207 in api.py filepath = 'D:\\Hifza\\fyp\\API\\' + 'static/' + filename  Now here you should replace  this 'D:\\Hifza\\fyp\\API\\' with the path where static folder present.
+
+By completing these steps, you will ensure that the API is correctly configured to utilize the trained model and handle user inputs effectively.
 
 # Model Training
 
