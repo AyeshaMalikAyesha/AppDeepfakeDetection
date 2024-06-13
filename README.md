@@ -99,4 +99,8 @@ You can watch the video for demo:
 2. Sania Batool
 3. Sana Anwar
 
+# Contact me
+
+For any queries you can ask it in issues section or feel free to email me at ayeshafareed76@gmail.com
+
 
