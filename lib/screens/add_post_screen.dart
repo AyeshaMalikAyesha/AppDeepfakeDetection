@@ -123,36 +123,6 @@ class _AddPostScreenState extends State<AddPostScreen> {
                 onPressed: () async {
                   Navigator.of(context).pop();
                   Uint8List file = await pickImage(ImageSource.gallery);
-
-                  setState(() {
-                    _isLoading = true;
-                  });
-                  var request = http.MultipartRequest(
-                      'POST',
-                      Uri.parse(
-                          'https://sparrow-helpful-yearly.ngrok-free.app/predict_media'));
-                  // var request = http.MultipartRequest(
-                  //     'POST', Uri.parse('http://10.0.2.2:5000/predict_media'));
-
-                  // Add the video file to the request
-                  request.files.add(
-                      await http.MultipartFile.fromPath('file', _videoURL!));
-
-                  // Send the request
-                  var streamedResponse = await request.send();
-
-                  // Get the response
-                  var response =
-                      await http.Response.fromStream(streamedResponse);
-
-                  // Parse the response data
-                  var decoded = jsonDecode(response.body);
-
-                  // Update the output state
-                  setState(() {
-                    _isLoading = false;
-                    label = decoded['label'];
-                  });
                   setState(() {
                     _file = file;
                     _postType = 'image';

@@ -13,6 +13,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 bool show = true;
 void main() async {
+  
   WidgetsFlutterBinding.ensureInitialized();
 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
