@@ -83,7 +83,7 @@ To run the application on a real device, please follow these instructions:
 
 6. Open Visual Studio Code, ensure the API is running, and paste the modified command (`ngrok http --domain=macaw-elegant-ghastly.ngrok-free.app 5000`) into the terminal.
 
-7. Now go to scan_screen.dart file, navigate to line 76 and replace this part ('https://sparrow-helpful-yearly.ngrok-free.app') of the line with this ('https://macaw-elegant-ghastly.ngrok-free.app'). In your case your static domain will be different.
+7. Now go to scan_screen.dart file, navigate to line 76 and replace this part (`https://sparrow-helpful-yearly.ngrok-free.app`) of the line with this (`https://macaw-elegant-ghastly.ngrok-free.app`). In your case your static domain will be different.
 
 This setup will allow you to run the application on a real device.
 
