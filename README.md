@@ -42,6 +42,30 @@ By completing these steps, you will ensure that the API is correctly configured 
 
 For preprocessing of videos and model Training we used the code from <a href='https://github.com/abhijitjadhav1998/Deepfake_detection_using_deep_learning'>this Github repo</a>
 
+# Run on Emulator
+
+To run the application on an emulator, please follow these steps:
+
+1. Navigate to the `scan_screen.dart` file located in the `lib/screens` directory.
+2. Go to line 73 in the file.
+3. Replace the following code:
+
+```dart
+var request = http.MultipartRequest(
+  'POST',
+  Uri.parse('https://sparrow-helpful-yearly.ngrok-free.app/predict_media'));
+```
+
+with this code:
+
+```dart
+var request = http.MultipartRequest(
+  'POST', 
+  Uri.parse('http://10.0.2.2:5000/predict_media'));
+```
+
+This change will configure the app to use the appropriate API endpoint for the emulator.
+
 # Demo
 
 You can watch the video for demo:
