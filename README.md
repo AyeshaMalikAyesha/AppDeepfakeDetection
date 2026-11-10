@@ -12,7 +12,7 @@ git clone https://github.com/AyeshaMalikAyesha/AppDeepfakeDetection.git
 
 The features in our app is:
 
-💡 𝑨𝒄𝒄𝒖𝒓𝒂𝒄𝒚: We achieved an accuracy of 93% on training set and 75% on test set.
+💡 𝑨𝒄𝒄𝒖𝒓𝒂𝒄𝒚: We achieved an accuracy of 93% on training set and 73% on test set.
 
 💡 𝑨𝒅𝒗𝒂𝒏𝒄𝒆𝒅 𝑫𝒆𝒕𝒆𝒄𝒕𝒊𝒐𝒏: Utilizing cutting-edge AI and machine learning algorithms, our app can accurately identify deepfake videos 
    and images.
