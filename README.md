@@ -101,6 +101,6 @@ You can watch the video for demo:
 
 # Contact me
 
-For any queries you can ask it in issues section or feel free to email me at ayeshafareed76@gmail.com or ayeshafareed6767@gmail.com
+For any queries you can ask it in issues section or feel free to email me at ayeshafareed76@gmail.com
 
 
